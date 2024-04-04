@@ -1,0 +1,74 @@
+.right {
+  width: 70%;
+}
+
+@media screen and (max-width: 1000px) and (min-width:600px) {
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+.userList {
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 0.5px solid gray;
+}
+
+.userList.activeDiv {
+  background-color: #eeeeee;
+  border-right: 1px solid black;
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b0b0b0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.user-details {
+  width: 90%;
+  margin: auto;
+  margin-top: -5px;
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.loader {
+  width: 50px;
+  margin: auto;
+  margin-top: 220px;
+  aspect-ratio: 1;
+  display: grid;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  border-color: #00000000 #4500e6;
+  animation: loader 1s infinite linear;
+}
+
+
+@keyframes loader {
+  100% {
+    transform: rotate(1turn);
+  }
+}
