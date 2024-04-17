@@ -25,7 +25,12 @@ const UserDetails: React.FC<UserDetailsProps> = ({ current }) => {
       });
   }
   useEffect(() => {
-    FetchData()
+    FetchData();
+    const intervalId = setInterval(() => {
+      FetchData()
+    }, 20000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
 
