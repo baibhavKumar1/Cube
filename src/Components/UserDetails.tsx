@@ -1,3 +1,9 @@
+/**
+ * UserDetails Component
+ * This component is responsible for displaying the details of a user, including a list of images fetched from an external API.
+ * Props:
+ * - current: number - The current user index.
+ */
 import React, { useEffect, useState } from "react";
 import "../App.css";
 import axios from "axios";
@@ -12,6 +18,12 @@ const UserDetails: React.FC<UserDetailsProps> = ({ current }) => {
   const [data, setData] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
+  /**
+   * FetchData
+   * Fetches a random page of images from the Picsum API and updates the component's state with the new data.
+   * No parameters.
+   * Side effects: Sets the `data` state with the fetched image URLs and updates the `loading` state.
+   */
   const FetchData = () => {
     setLoading(true);
     const randomPage = Math.floor(Math.random() * 100) + 1;
@@ -24,6 +36,11 @@ const UserDetails: React.FC<UserDetailsProps> = ({ current }) => {
         setLoading(false);
       });
   }
+  /**
+   * useEffect Hook
+   * Invoked after the component mounts, calling the FetchData function to fetch initial data.
+   * Dependencies: [] - Ensures that the data is fetched only once after the initial render.
+   */
   useEffect(() => {
     FetchData();
     const intervalId = setInterval(() => {
