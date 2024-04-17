@@ -20,7 +20,7 @@ const UserDetails: React.FC<UserDetailsProps> = ({ current }) => {
         setData(res?.data?.map((item: UserDetailsResponse) => item.download_url));
         setLoading(false);
       })
-      .catch((err) => {
+      .catch(() => {
         setLoading(false);
       });
   }
