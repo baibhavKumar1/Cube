@@ -20,22 +20,20 @@ const UserDetails: React.FC<UserDetailsProps> = ({ current }) => {
         setData(res?.data?.map((item: UserDetailsResponse) => item.download_url));
         setLoading(false);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
         setLoading(false);
       });
   }
   useEffect(() => {
-    FetchData()
-  }, []);
-
-  useEffect(() => {
+    FetchData();
     const intervalId = setInterval(() => {
       FetchData()
     }, 20000);
 
     return () => clearInterval(intervalId);
   }, []);
+
+
 
   return (
     <div>
